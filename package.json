@@ -1,0 +1,21 @@
+{
+  "name": "ratemyoreo",
+  "version": "1.0.0",
+  "description": "Website rating different oreo flavors",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm -s install && cd client && npm -s install",
+    "client": "cd client && npm start",
+    "server": "nodemon server.js",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Peter Choi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
