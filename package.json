@@ -1,7 +1,7 @@
 {
-  "name": "ratemyoreo",
+  "name": "cowboys",
   "version": "1.0.0",
-  "description": "Website rating different oreo flavors",
+  "description": "Website with dallas cowboys resources",
   "main": "index.js",
   "scripts": {
     "build": "npm -s install && cd client && npm -s install",
