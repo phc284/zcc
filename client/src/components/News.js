@@ -34,7 +34,7 @@ class News extends Component {
     axios.get(url)
       .then((res) =>{
         console.log(res)
-        let articles = res.data.articles.slice(0, 9)
+        let articles = res.data.articles.slice(0, 11)
         this.setState({
           articles
         })
@@ -48,7 +48,7 @@ class News extends Component {
         if (article) {
           return (<div className="news-item">
               <img src={article.urlToImage} alt=""/>
-              <a href={article.url}>{article.title}</a>
+              <a target="_blank" href={article.url}>{article.title}</a>
             </div>)
         }
       })
