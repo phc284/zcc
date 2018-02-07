@@ -47,7 +47,7 @@ class Sidebar extends Component {
       this.state.articles.map((article, index) => {
         if (article) {
           return (<div>
-              <a href="{article.url}">{article.title}</a>
+              <a href={article.url}>{article.title}</a>
             </div>)
         }
       })
@@ -56,7 +56,7 @@ class Sidebar extends Component {
 
 
   render() {
-    return (
+  return (
       <div className="sidebar">
         <div className="sidebar-layout">
           <h2>Recent News</h2>
