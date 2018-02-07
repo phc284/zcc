@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Websites from "./components/Websites";
 import Forums from "./components/Forums";
 import Twitter from "./components/Twitter";
-import Sidebar from "./components/Sidebar";
+import News from "./components/News";
 import Footer from "./components/Footer";
 
 class App extends Component {
@@ -11,10 +11,10 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <News />
         <Websites />
         <Forums />
         <Twitter />
-        <Sidebar />
         <Footer />
       </div>
     );
