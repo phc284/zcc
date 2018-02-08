@@ -28,7 +28,7 @@ class News extends Component {
     var url = 'https://newsapi.org/v2/everything?' +
               'q=dallas%20cowboys&' +
               `from=${yyyy}-${mm}-${dd}&` +
-              'sortBy=relavancy&' +
+              'sortBy=publishedAt&' +
               'apiKey=b4649e2eeda04898bf97687ff94929ef';
 
     axios.get(url)
@@ -46,8 +46,8 @@ class News extends Component {
     return (
       this.state.articles.map((article, index) => {
         if (article) {
+
           return (<div className="news-item">
-              <img src={article.urlToImage} alt=""/>
               <a target="_blank" href={article.url}>{article.title}</a>
             </div>)
         }
@@ -60,8 +60,7 @@ class News extends Component {
   return (
       <div className="news">
         <div className="news-layout">
-        <h2>Recent News</h2>
-        <h4>Powered by NewsAPI</h4>
+        <h2>Recent News<br/><span>Powered by NewsAPI</span></h2>
           {this.renderArticles()}
         </div>
       </div>
