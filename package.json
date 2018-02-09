@@ -7,7 +7,7 @@
   "scripts": {
     "predeploy": "cd client && npm run build",
     "deploy": "cd client && gh-pages -d build",
-    "build": "npm -s install && cd client && npm -s install",
+    "build": "npm -s install && cd client && npm -s install && npm run build",
     "client": "cd client && npm start",
     "server": "nodemon server.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
