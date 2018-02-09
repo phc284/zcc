@@ -9,12 +9,16 @@
     "deploy": "cd client && gh-pages -d build",
     "build": "cd client && npm install --only=dev && npm install && npm run build",
     "client": "cd client && npm start",
-    "server": "nodemon server.js",
+    "server": "nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "start": "concurrently \"cd server && nodemon index.js\" \"cd client && npm start\"",
+    "start": "node server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
+  "cacheDirectories": [
+    "node_modules",
+    "client/node_modules"
+],
   "author": "Peter Choi",
   "license": "ISC",
   "dependencies": {
