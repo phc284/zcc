@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import cowboysOfficial from '../images/cowboysOfficial.png'
-import bloggingBoys from '../images/bloggingtheboys.png'
-
+import cowboysPhoto from '../images/cowboysOfficial.png';
+import bloggingBPhoto from '../images/bloggingtheboys.png';
+import espnPhoto from '../images/espn.png';
 
 class Websites extends Component {
   render() {
@@ -10,12 +10,40 @@ class Websites extends Component {
         <div className="websites-layout">
           <h2> Websites </h2>
           <div className="website-item">
-            <a target="_blank" href="http://www.dallascowboys.com"><img src={cowboysOfficial} alt=""/></a>
-            <p>This is the offical website of the Dallas Cowboys. All of your basic need will be on this website </p>
+            <a target="_blank" href="http://www.dallascowboys.com">
+              <img src={cowboysPhoto} alt="" />
+            </a>
+            <div>
+              <a target="_blank" href="http://www.dallascowboys.com">
+                <h3>Dallas Cowboys Official Website</h3>
+              </a>
+              <br />This is the offical website of the Dallas Cowboys. All of
+              your basic need will be on this website. From scores, schedules,
+              news, and a top tier news team including David Helman, Bryan
+              Broaddus, Nick Eatman, and more!
+            </div>
           </div>
           <div className="website-item">
-            <p>This is the offical </p>
-            <a target="_blank" href="http://www.bloggingtheboys.com"><img src={bloggingBoys} alt=""/></a>
+            <div>
+              <a target="_blank" href="http://www.bloggingtheboys.com">
+                <h3>Blogging the Boys</h3>
+              </a>
+              <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+            </div>
+            <a target="_blank" href="http://www.bloggingtheboys.com">
+              <img src={bloggingBPhoto} alt="" />
+            </a>
+          </div>
+          <div className="website-item">
+            <a target="_blank" href="http://http://www.espn.com/nfl/team/_/name/dal/dallas-cowboys">
+            <img src={espnPhoto} alt="" />
+            </a>
+            <div>
+              <a target="_blank" href="http://http://www.espn.com/nfl/team/_/name/dal/dallas-cowboys">
+                <h3>ESPN Dallas Cowboys</h3>
+              </a>
+              <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+            </div>
           </div>
         </div>
       </div>

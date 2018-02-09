@@ -9,12 +9,22 @@ class Forums extends Component {
         <div className="forums-layout">
           <h2> Forums </h2>
           <div className="forum-item">
-            <a target="_blank" href="http://www.dallascowboys.com"><img src={redditPhoto} alt=""/></a>
-            <p>This is the offical site of the Dallas Cowboys.</p>
+            <a target="_blank" href="http://www.reddit.com/r/cowboys"><img src={redditPhoto} alt=""/></a>
+            <div>
+              <a target="_blank" href="http://www.reddit.com/r/cowboys">
+                <h3>Cowboys Subreddit</h3>
+              </a>
+              <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+            </div>
           </div>
           <div className="forum-item">
-            <p>This is the offical </p>
-            <a target="_blank" href="http://www.bloggingtheboys.com"><img src={czonePhoto} alt=""/></a>
+            <div>
+              <a target="_blank" href="https://cowboyszone.com/">
+                <h3>Cowboys Zone Forum</h3>
+              </a>
+              <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit.
+            </div>
+            <a target="_blank" href="https://cowboyszone.com/"><img src={czonePhoto} alt=""/></a>
           </div>
         </div>
       </div>
