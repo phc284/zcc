@@ -17,7 +17,7 @@ app.get('/hello', (req, res) => {
 // match one above, send back React's index.html file.
 if (!process.env.DEV) {
   app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, './client/build/index.html'));
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
   });
 }
 
