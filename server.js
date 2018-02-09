@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 //On the server this will serve up our build folder as static files
 app.use(express.static(path.join(__dirname, './client/build')))
 
-app.get('/api/hello', (req, res) => {
+app.get('/hello', (req, res) => {
   res.send({ express: 'Hello' });
 });
 
