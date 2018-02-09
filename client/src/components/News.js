@@ -14,7 +14,6 @@ class News extends Component {
 
   componentDidMount() {
     this.getArticles();
-
   }
 
   getArticles() {

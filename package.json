@@ -6,7 +6,7 @@
   "homepage": "http://phc284.github.io/cowboys",
   "scripts": {
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
-    "start": "node server",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
