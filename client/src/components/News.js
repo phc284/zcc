@@ -17,38 +17,47 @@ class News extends Component {
   }
 
   getArticles() {
-    var today = new Date();
-    var dd = "0" + today.getDate();
-    var mm = today.getMonth()+1 + "";
-    var yyyy = today.getFullYear() + "";
-
-    if (mm.length === 1) {
-      mm = "0" + mm;
-    }
-    if (dd.length === 3) {
-      dd = dd.slice(1, 3)
-    }
-
-    var url = 'https://newsapi.org/v2/everything?' +
-              'q=dallas%20cowboys&' +
-              `from=${yyyy}-${mm}-${dd}&` +
-              'sortBy=relevancy&' +
-              'apiKey=b4649e2eeda04898bf97687ff94929ef';
-
-    axios.get(url)
-      .then((res) =>{
-        let articles = res.data.articles.slice(0, 11);
+    axios.get('/news')
+      .then ((res) => {
+        console.log(res);
+        let articles = res.data.slice(0, 11);
         this.setState({
           articles
         })
       })
+
+    // var today = new Date();
+    // var dd = "0" + today.getDate();
+    // var mm = today.getMonth()+1 + "";
+    // var yyyy = today.getFullYear() + "";
+    //
+    // if (mm.length === 1) {
+    //   mm = "0" + mm;
+    // }
+    // if (dd.length === 3) {
+    //   dd = dd.slice(1, 3)
+    // }
+    //
+    // var url = 'https://newsapi.org/v2/everything?' +
+    //           'q=dallas%20cowboys&' +
+    //           `from=${yyyy}-${mm}-${dd}&` +
+    //           'sortBy=relevancy&' +
+    //           'apiKey=b4649e2eeda04898bf97687ff94929ef';
+    //
+    // axios.get(url)
+    //   .then((res) =>{
+    //     let articles = res.data.articles.slice(0, 11);
+    //     this.setState({
+    //       articles
+    //     })
+    //   })
   }
 
   renderArticles() {
     return (
       this.state.articles.map((article, index) => {
-          return (<div className="news-item">
-              <a target="_blank" href={article.url}>{article.title}</a>
+          return (<div className="news-item" key={index}>
+              <a target="_blank" rel="noopener noreferrer" href={article.url}>{article.title}</a>
             </div>)
       })
     )

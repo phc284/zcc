@@ -17,77 +17,77 @@ class Twitter extends Component {
         <div className="twitter-container">
         <h2>Who to Follow</h2>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
             </div>
           </div>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
             </div>
           </div>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
             </div>
           </div>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
             </div>
           </div>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
             </div>
           </div>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
             </div>
           </div>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
             </div>
           </div>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
             </div>
           </div>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
             </div>
           </div>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
             </div>
           </div>
           <div className="twitter-profile">
-            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg"/>
+            <img src="https://pbs.twimg.com/profile_images/830458087635087361/cUvS_UJU_400x400.jpg" alt=""/>
             <div>
               David Helman
               <Follow username="HelmanDC"/>
