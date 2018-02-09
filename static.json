@@ -1,6 +1,0 @@
-{
-  "root": "cowboys/",
-  "routes": {
-    "**/": "index.html"
-  }
-}

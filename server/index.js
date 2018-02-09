@@ -7,7 +7,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //On the server this will serve up our build folder as static files
-app.use(express.static(path.join(__dirname, './client/build')))
+app.use(express.static(path.join(__dirname, '../client/build')))
 
 app.get('/hello', (req, res) => {
   res.send({ express: 'Hello' });
