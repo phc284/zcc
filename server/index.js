@@ -37,8 +37,6 @@ app.get('/news', (req, res) => {
       res.send(data.data.articles.slice(0, 11));
     })
 
-
-  // res.send({})
 });
 
 
