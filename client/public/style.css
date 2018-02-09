@@ -25,6 +25,7 @@ body {
 
 h2 {
   font-size: 50px;
+  font-weight: 800;
 }
 
 /* Layout */
@@ -99,7 +100,6 @@ h2 {
   align-self: end;
   margin: 40px 0 0 0;
   line-height: 86%;
-  font-weight: 800;
   margin-bottom: 15px;
 }
 
@@ -143,15 +143,31 @@ h2 {
   /* margin: 10px; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(1fr));
-  grid-row-gap: 6%;
+  grid-row-gap: 50px;
   margin-bottom: 4%;
   text-align: center;
 }
 
 .websites-layout h2 {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   padding: 0;
-  margin-bottom: 0;
+  margin-bottom: 35px;
+  align-items: center;
+}
+
+.websites-layout h2:before, .websites-layout h2:after {
+  display: block;
+  content: '';
+  height: 10px;
+  margin-right: 10px;
+  background: linear-gradient(to var(--direction, left), var(--navyblue), transparent);
+}
+
+.websites-layout h2:after {
+  margin-left: 10px;
+  --direction: right;
 }
 
 .website-item:nth-child(even) {
@@ -160,12 +176,16 @@ h2 {
 }
 
 .website-item:nth-child(even) a{
-  justify-self: end;
+  justify-self: center;
 }
 
 .website-item:nth-child(even) div{
   text-align: center;
-  padding: 0 7%;
+  padding: 0 35px 0 0;
+}
+
+.website-item:nth-child(even) div a, .website-item:nth-child(even) div a:visited {
+  color: #000000;
 }
 
 .website-item:nth-child(odd) {
@@ -174,27 +194,29 @@ h2 {
 }
 
 .website-item:nth-child(odd) a{
-  justify-self: start;
+  justify-self: center;
 }
 
 .website-item:nth-child(odd) div{
   text-align: center;
+  padding: 0 0 0 35px;
+}
+
+.website-item:nth-child(odd) div a, .website-item:nth-child(odd) div a:visited {
+  color: #000000;
 }
 
 .website-item a {
   width: 350px;
   height: auto;
+  box-shadow: -10px -10px var(--navyblue)
 }
 
 .website-item a img {
   width: 100%;
-  height: auto;
+  height: 100%;
 }
 
-.website-item p {
-  font-size: 28px;
-  font-weight: 600;
-}
 
 /* Forums */
 
@@ -207,57 +229,31 @@ h2 {
   /* margin: 10px; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(1fr));
-  grid-row-gap: 30px;
+  grid-row-gap: 50px;
   margin-bottom: 4%;
   text-align: center;
 }
 
 .forums-layout h2 {
   grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   padding: 0;
-  margin-bottom: 0;
+  margin-bottom: 35px;
+  align-items: center;
 }
 
-.forum-item:nth-child(even) {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+.forums-layout h2:before, .forums-layout h2:after {
+  display: block;
+  content: '';
+  height: 10px;
+  margin-right: 10px;
+  background: linear-gradient(to var(--direction, left), var(--navyblue), transparent);
 }
 
-.forum-item:nth-child(even) a{
-  justify-self: end;
-}
-
-.forum-item:nth-child(even) div{
-  text-align: center;
-  padding: 0 7%;
-}
-
-.forum-item:nth-child(odd) {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.forum-item:nth-child(odd) a{
-  justify-self: start;
-}
-
-.forum-item:nth-child(odd) div{
-  text-align: center;
-}
-
-.forum-item a {
-  width: 350px;
-  height: auto;
-}
-
-.forum-item a img {
-  width: 100%;
-  height: auto;
-}
-
-.forum-item p {
-  font-size: 28px;
-  font-weight: 600;
+.forums-layout h2:after {
+  margin-left: 10px;
+  --direction: right;
 }
 
 
@@ -271,8 +267,8 @@ h2 {
 
 .twitter-container {
   display: grid;
-  margin: 15px;
-  grid-gap: 10px;
+  margin: 15px 15px 15px 35px;
+  grid-gap: 15px;
   grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
   justify-content: center;
   align-items: center;
@@ -291,7 +287,7 @@ h2 {
   align-self: center;
   justify-self: center;
   grid-gap: 10px;
-  width: 100%
+  width: 100%;
 }
 
 .twitter-profile > * {
@@ -312,6 +308,15 @@ h2 {
 }
 
 /* Media Queries */
+
+@media (min-width: 1024px) {
+  .website-item:nth-child(even) div {
+    margin-right: 6%;
+  }
+  .website-item:nth-child(odd) div {
+    margin-left: 6%;
+  }
+}
 
 /* Tablet */
 @media(max-width: 900px) {
@@ -354,10 +359,16 @@ h2 {
   font-size: 14px;
  }
 
+ .websites-layout, .forums-layout {
+   /* grid-gap: 60px 0px; */
+ }
+
+
+
 }
 
 /* Phone */
-@media(max-width: 600px) {
+@media(max-width: 700px) {
   .App {
     grid-template-areas: "header"
     "news"
@@ -396,34 +407,8 @@ h2 {
     grid-column: 1 / -1;
   }
 
-
   .forums-layout{
     grid-gap: 25px;
-  }
-
-  .forum-item {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-
-  .forum-item:nth-child(even) a{
-    grid-column: 1 / -1;
-    justify-self: center;
-  }
-  .forum-item:nth-child(even) div{
-    grid-column: 1 / -1;
-    justify-content: center;
-  }
-
-  .forum-item:nth-child(odd) div{
-    justify-content: center;
-    grid-column: 1 / -1;
-  }
-  .forum-item:nth-child(odd) a{
-    grid-column: 1 / -1;
-    grid-row: 1;
-    justify-self: center;
-    order: 0;
   }
 
 }

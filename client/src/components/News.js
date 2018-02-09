@@ -25,32 +25,6 @@ class News extends Component {
           articles
         })
       })
-
-    // var today = new Date();
-    // var dd = "0" + today.getDate();
-    // var mm = today.getMonth()+1 + "";
-    // var yyyy = today.getFullYear() + "";
-    //
-    // if (mm.length === 1) {
-    //   mm = "0" + mm;
-    // }
-    // if (dd.length === 3) {
-    //   dd = dd.slice(1, 3)
-    // }
-    //
-    // var url = 'https://newsapi.org/v2/everything?' +
-    //           'q=dallas%20cowboys&' +
-    //           `from=${yyyy}-${mm}-${dd}&` +
-    //           'sortBy=relevancy&' +
-    //           'apiKey=b4649e2eeda04898bf97687ff94929ef';
-    //
-    // axios.get(url)
-    //   .then((res) =>{
-    //     let articles = res.data.articles.slice(0, 11);
-    //     this.setState({
-    //       articles
-    //     })
-    //   })
   }
 
   renderArticles() {

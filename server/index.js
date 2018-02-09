@@ -6,6 +6,7 @@ require('dotenv').config({
 const path = require('path');
 const bodyParser = require('body-parser');
 const axios = require('axios');
+const helpers = require('./helpers');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -14,33 +15,12 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('/news', (req, res) => {
-  var today = new Date();
-  var dd = "0" + today.getDate();
-  var mm = today.getMonth()+1 + "";
-  var yyyy = today.getFullYear() + "";
-
-  if (mm.length === 1) {
-    mm = "0" + mm;
-  }
-  if (dd.length === 3) {
-    dd = dd.slice(1, 3)
-  }
-
-  var url = 'https://newsapi.org/v2/everything?' +
-            'q=dallas%20cowboys&' +
-            `from=${yyyy}-${mm}-${dd}&` +
-            'sortBy=relevancy&' +
-            `apiKey=${process.env.NEWS_API_KEY}`;
-
-  axios.get(url)
-    .then((data) => {
-      res.send(data.data.articles.slice(0, 11));
-    })
-
+  helpers.getNews(res);
 });
 
-
-console.log(process.env.NEWS_API_KEY)
+app.get('/twitter', (req, res) => {
+  helpers.getTwitterHandles(res);
+});
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
