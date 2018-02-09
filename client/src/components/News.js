@@ -13,6 +13,11 @@ class News extends Component {
   }
 
   componentDidMount() {
+    this.getArticles();
+
+  }
+
+  getArticles() {
     var today = new Date();
     var dd = "0" + today.getDate();
     var mm = today.getMonth()+1 + "";
@@ -28,13 +33,12 @@ class News extends Component {
     var url = 'https://newsapi.org/v2/everything?' +
               'q=dallas%20cowboys&' +
               `from=${yyyy}-${mm}-${dd}&` +
-              'sortBy=publishedAt&' +
+              'sortBy=relevancy&' +
               'apiKey=b4649e2eeda04898bf97687ff94929ef';
 
     axios.get(url)
       .then((res) =>{
-        console.log(res)
-        let articles = res.data.articles.slice(0, 11)
+        let articles = res.data.articles.slice(0, 11);
         this.setState({
           articles
         })
@@ -42,15 +46,11 @@ class News extends Component {
   }
 
   renderArticles() {
-    let articles = this.state.articles;
     return (
       this.state.articles.map((article, index) => {
-        if (article) {
-
           return (<div className="news-item">
               <a target="_blank" href={article.url}>{article.title}</a>
             </div>)
-        }
       })
     )
   }

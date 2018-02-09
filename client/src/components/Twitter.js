@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import { Follow } from 'react-twitter-widgets'
+import { Follow } from 'react-twitter-widgets';
 
 class Twitter extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      twitter: []
+    }
+  }
+
+
   render() {
     return (
       <div className="twitter">

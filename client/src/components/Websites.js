@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Card, Button, CardTitle, CardText } from 'reactstrap';
+import cowboysOfficial from '../images/cowboysOfficial.png'
+import bloggingBoys from '../images/bloggingtheboys.png'
+
 
 class Websites extends Component {
   render() {
@@ -7,29 +9,14 @@ class Websites extends Component {
       <div className="websites">
         <div className="websites-layout">
           <h2> Websites </h2>
-          <Card body>
-            <CardTitle><a href="http://www.dallascowboys.com">Dallas Cowboys Official Website</a></CardTitle>
-            <CardText>
-              The Official Site of the Dallas Cowboys. You can find most of your needs here from Scores, News, and Gear
-            </CardText>
-
-          </Card>
-          <Card body className="text-center">
-            <CardTitle>Special Title Treatment</CardTitle>
-            <CardText>
-              With supporting text below as a natural lead-in to additional
-              content.
-            </CardText>
-            <Button>Go somewhere</Button>
-          </Card>
-          <Card body className="text-right">
-            <CardTitle>Special Title Treatment</CardTitle>
-            <CardText>
-              With supporting text below as a natural lead-in to additional
-              content.
-            </CardText>
-            <Button>Go somewhere</Button>
-          </Card>
+          <div className="website-item">
+            <a target="_blank" href="http://www.dallascowboys.com"><img src={cowboysOfficial} alt=""/></a>
+            <p>This is the offical website of the Dallas Cowboys. All of your basic need will be on this website </p>
+          </div>
+          <div className="website-item">
+            <p>This is the offical </p>
+            <a target="_blank" href="http://www.bloggingtheboys.com"><img src={bloggingBoys} alt=""/></a>
+          </div>
         </div>
       </div>
     );
