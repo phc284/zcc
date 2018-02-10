@@ -12,7 +12,7 @@ class Twitter extends Component {
   }
 
   componentDidMount() {
-    axios.get('/twitter')
+    axios.get('/api/twitter')
     .then((res) => {
       this.setState({
         handles: res.data

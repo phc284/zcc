@@ -14,11 +14,11 @@ app.use(bodyParser.json());
 //On the server this will serve up our build folder as static files
 app.use(express.static(path.join(__dirname, '../client/build')));
 
-app.get('/news', (req, res) => {
+app.get('/api/news', (req, res) => {
   helpers.getNews(res);
 });
 
-app.get('/twitter', (req, res) => {
+app.get('/api/twitter', (req, res) => {
   helpers.getTwitterHandles(res);
 });
 

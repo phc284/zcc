@@ -166,16 +166,29 @@ h2 {
   display: grid;
   grid-area: info;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
 }
 
 .info-item {
-  width: 300px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 350px;
   height: 250px;
-  border: 3px solid black;
   justify-self: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
   margin: 20px 0;
   background: white;
+  border: 3px solid black;
+}
+
+.info-item h3 {
+  grid-column: 1 /-1;
+  justify-self: center;
+  letter-spacing: 2px;
+  text-decoration: underline;
+  margin-bottom: 0;
 }
 
 /* Websites */
@@ -252,11 +265,18 @@ h2 {
   color: #000000;
 }
 
-.website-item a {
+.website-item a:nth-child(odd):first-child {
   width: 350px;
   height: auto;
   box-shadow: -10px -10px var(--navyblue)
 }
+
+.website-item a:nth-child(even):last-child {
+  width: 350px;
+  height: auto;
+  box-shadow: -10px -10px var(--navyblue)
+}
+
 
 .website-item a img {
   width: 100%;
@@ -272,7 +292,7 @@ h2 {
 
 .forums {
   grid-area: forums;
-  background: var(--silver);
+  background: var(--pantgrey);
 }
 
 .forums-layout {
