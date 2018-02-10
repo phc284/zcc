@@ -38,7 +38,7 @@ class Websites extends Component {
             </a>
             <div>
               <a target="_blank" rel="noopener noreferrer" href="http://www.espn.com/nfl/team/_/name/dal/dallas-cowboys">
-                <h3>ESPN Dallas Cowboys</h3>
+                <h3>ESPN: Dallas Cowboys</h3>
               </a>
               <br />This is your basic all-in-one stop where you will find exclusive ESPN content about the Cowboys. The wesbite is easy to navigate and should be your go to ifi you are looking for scores and statistics. You can find that most articles are written by Todd Archer, who is the ESPN Dallas Cowboys writer.
             </div>

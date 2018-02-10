@@ -39,6 +39,7 @@ h2 {
 .App {
   display: grid;
   grid-template-areas: "header header news"
+    "info info info"
     "websites websites websites"
     "forums forums forums"
     "twitter twitter twitter"
@@ -161,6 +162,21 @@ h2 {
 }
 
 /* Info */
+.info {
+  display: grid;
+  grid-area: info;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+}
+
+.info-item {
+  width: 300px;
+  height: 250px;
+  border: 3px solid black;
+  justify-self: center;
+  margin: 20px 0;
+  background: white;
+}
 
 /* Websites */
 
@@ -381,6 +397,7 @@ h2 {
  .App {
    grid-template-areas: "header header header"
    "news news news"
+   "info info info"
    "websites websites websites"
    "forums forums forums"
    "twitter twitter twitter"
@@ -420,6 +437,7 @@ h2 {
   .App {
     grid-template-areas: "header"
     "news"
+    "info"
     "websites"
     "forums"
     "twitter"

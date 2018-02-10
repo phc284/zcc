@@ -3,8 +3,11 @@ import React, { Component } from 'react';
 class Info extends Component {
   render() {
     return (
-      <div className="footer">
-        <span>The Eagles still suck</span>
+      <div className="info">
+        <div className="info-item"></div>
+        <div className="info-item"></div>
+        <div className="info-item"></div>
+        <div className="info-item"></div>
       </div>
     );
   }

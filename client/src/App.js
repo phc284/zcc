@@ -5,6 +5,7 @@ import Forums from "./components/Forums";
 import Twitter from "./components/Twitter";
 import News from "./components/News";
 import Footer from "./components/Footer";
+import Info from "./components/Info";
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <News />
+        <Info />
         <Websites />
         <Forums />
         <Twitter />
