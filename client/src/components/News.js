@@ -19,8 +19,7 @@ class News extends Component {
   getArticles() {
     axios.get('/news')
       .then ((res) => {
-        console.log(res);
-        let articles = res.data.slice(0, 11);
+        let articles = res.data;
         this.setState({
           articles
         })

@@ -58,6 +58,11 @@ const twitter_handles = [
 		username: 'ESPNDallas',
 		name: 'ESPN Dallas',
 		img_url: 'https://pbs.twimg.com/profile_images/489890326392238082/Td8WLhGB_400x400.jpeg'
+	},
+	{
+		username: 'toddarcher',
+		name: 'Todd Archer',
+		img_url: 'https://pbs.twimg.com/profile_images/887697498365734917/oAYef415_400x400.jpg'
 	}
 ];
 

@@ -22,7 +22,7 @@ const getNews = (res) => {
 
   axios.get(url)
     .then((data) => {
-      res.send(data.data.articles.slice(0, 11));
+      res.send(data.data.articles.slice(0, 14));
     })
 }
 
