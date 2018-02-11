@@ -12,7 +12,6 @@ class Homepage extends Component {
   render() {
     return (
       <div className="Homepage">
-        <NavBar />
         <Header />
         <News />
         <Websites />

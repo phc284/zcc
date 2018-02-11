@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Homepage from './components/Homepage';
 import Info from './components/Info';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import Navbar from './components/NavBar';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
 const history = createBrowserHistory();
@@ -11,6 +12,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App" history={history}>
+          <Navbar />
           <Route exact path='/' component={Homepage} />
           <Route exact path='/info' component={Info} />
         </div>
