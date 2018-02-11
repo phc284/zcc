@@ -34,18 +34,38 @@ html {
 
  .Homepage {
    display: grid;
-   grid-template-areas: "nav nav nav" "header header news" "info info info" "websites websites websites" "forums forums forums" "twitter twitter twitter" "footer footer footer";
+   grid-template-areas:
+     "header header news"
+     "info info info"
+     "websites websites websites"
+     "forums forums forums"
+     "twitter twitter twitter"
+     "footer footer footer";
  }
 
  /* Navbar */
 
  .navbar {
-   grid-area: nav;
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
    background: rgba(0, 0, 0, .6);
    height: 50px;
    position: fixed;
    top: 0;
    width: 90%;
+   text-align: center;
+ }
+
+ .navbar div {
+   background: transparent;
+   color: white;
+   align-self: center;
+   padding: 10px 0;
+   width: 100px;
+ }
+
+ .navbar a:visited {
+   color: white;
  }
 
  /* Header */
@@ -57,7 +77,7 @@ html {
    flex-direction: column;
    align-items: center;
    text-align: center;
-   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./images/cowboy-field.jpg") no-repeat top center fixed;
+   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../cowboy-field.jpg") no-repeat top center fixed;
    background-size: cover;
    -webkit-background-size: cover;
    -moz-background-size: cover;
@@ -159,36 +179,6 @@ html {
    color: var(--navyblue);
  }
 
- /* Info */
-
- .info {
-   display: grid;
-   grid-area: info;
-   justify-content: center;
-   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
- }
-
- .info-item {
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   width: 350px;
-   height: 250px;
-   justify-self: center;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
-   margin: 20px 0;
-   background: white;
-   border: 3px solid black;
- }
-
- .info-item h3 {
-   grid-column: 1 /-1;
-   justify-self: center;
-   letter-spacing: 2px;
-   text-decoration: underline;
-   margin-bottom: 0;
- }
 
  /* Websites */
 
@@ -407,8 +397,14 @@ html {
    body {
      margin: 0;
    }
-   .App {
-     grid-template-areas: "nav nav nav" "header header header" "news news news" "info info info" "websites websites websites" "forums forums forums" "twitter twitter twitter" "footer footer footer";
+   .Homepage {
+     grid-template-areas: "header header header"
+     "news news news"
+     "info info info"
+     "websites websites websites"
+     "forums forums forums"
+     "twitter twitter twitter"
+     "footer footer footer";
    }
    .news-layout {
      display: grid;
@@ -435,8 +431,14 @@ html {
  /* Phone */
 
  @media(max-width: 700px) {
-   .App {
-     grid-template-areas: "nav" "header" "news" "info" "websites" "forums" "twitter" "footer";
+   .Homepage {
+     grid-template-areas: "header"
+     "news"
+     "info"
+     "websites"
+     "forums"
+     "twitter"
+     "footer";
    }
    .websites-layout, .forums-layout {
      grid-row-gap: 35px;
