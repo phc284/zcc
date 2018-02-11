@@ -1,6 +1,5 @@
- @import url('https://fonts.googleapis.com/css?family=Work+Sans:regular,black');
- @import url('https://fonts.googleapis.com/css?family=Raleway:regular,black');
- @import url('https://fonts.googleapis.com/css?family=Rubik:regular,black');
+ @import url('https://fonts.googleapis.com/css?family=Raleway:');
+ @import url('https://fonts.googleapis.com/css?family=Rubik');
 
  :root {
    --roadblue: 0, 53, 148;
@@ -161,7 +160,7 @@
  }
 
  /* Info */
-/* 
+/*
  .info {
    display: grid;
    grid-area: info;
