@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
-// b4649e2eeda04898bf97687ff94929ef
-
 class News extends Component {
   constructor (props) {
     super(props);

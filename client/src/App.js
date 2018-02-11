@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
-import Header from "./components/Header";
-import Websites from "./components/Websites";
-import Forums from "./components/Forums";
-import Twitter from "./components/Twitter";
-import News from "./components/News";
-import Footer from "./components/Footer";
-// import Info from "./components/Info";
-import NavBar from "./components/NavBar";
+import Homepage from './components/Homepage';
+import Info from './components/Info';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import createBrowserHistory from 'history/createBrowserHistory';
+
+const history = createBrowserHistory();
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <NavBar />
-        <Header />
-        <News />
-        <Websites />
-        <Forums />
-        <Twitter />
-        <Footer />
-      </div>
+      <Router>
+        <div className="App" history={history}>
+          <Route exact path='/' component={Homepage} />
+          <Route exact path='/info' component={Info} />
+        </div>
+      </Router>
     );
   }
 }
