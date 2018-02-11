@@ -58,10 +58,13 @@ html {
 
  .navbar div {
    background: transparent;
-   color: white;
    align-self: center;
    padding: 10px 0;
    width: 100px;
+ }
+
+ .navbar a {
+   color: white;
  }
 
  .navbar a:visited {
