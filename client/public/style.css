@@ -335,7 +335,7 @@
 
  .twitter-container {
    display: grid;
-   margin: 15px 15px 35px 35px;
+   margin: 0 15px 35px 35px;
    grid-gap: 15px;
    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
    justify-content: center;
