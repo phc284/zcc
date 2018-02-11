@@ -1,5 +1,6 @@
- @import url('https://fonts.googleapis.com/css?family=Raleway:');
- @import url('https://fonts.googleapis.com/css?family=Rubik');
+ @import url('https://fonts.googleapis.com/css?family=Work+Sans:regular,black');
+ @import url('https://fonts.googleapis.com/css?family=Raleway:regular,black');
+ @import url('https://fonts.googleapis.com/css?family=Rubik:regular,black');
 
  :root {
    --roadblue: 0, 53, 148;
@@ -106,6 +107,7 @@
 
  .header .button:hover {
    background: rgba(255, 255, 255, .4);
+   asdf:s;
  }
 
  /* News */
@@ -160,7 +162,7 @@
  }
 
  /* Info */
-/*
+
  .info {
    display: grid;
    grid-area: info;
@@ -188,7 +190,7 @@
    letter-spacing: 2px;
    text-decoration: underline;
    margin-bottom: 0;
- } */
+ }
 
  /* Websites */
 
@@ -282,7 +284,7 @@
  }
 
  .website-item div h3 {
-   margin-bottom: 0 !important;
+   margin-bottom: 0;
  }
 
  /* Forums */
@@ -445,10 +447,12 @@
      grid-template-columns: 1fr;
      grid-template-rows: 1fr 1fr;
    }
+
    .website-item div {
-     margin: 0 !important;
-     padding: 5% !important;
+     margin: 0;
+     padding: 5%;
    }
+
    .website-item:nth-child(even) a {
      grid-column: 1 / -1;
      justify-self: center;
