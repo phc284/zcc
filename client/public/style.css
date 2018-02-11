@@ -38,12 +38,19 @@ h2 {
 
 .App {
   display: grid;
-  grid-template-areas: "header header news"
+  grid-template-areas: "nav nav nav"
+    "header header news"
     "info info info"
     "websites websites websites"
     "forums forums forums"
     "twitter twitter twitter"
     "footer footer footer";
+}
+
+/* Navbar */
+
+.navbar {
+  grid-area: nav;
 }
 
 /* Header */
