@@ -10,7 +10,7 @@
  }
 
  html {
-   box-sizing: border-box;
+   /* box-sizing: border-box; */
    font-family: 'Rubik';
    font-weight: normal;
  }
@@ -93,21 +93,21 @@
    letter-spacing: 2px;
  }
 
- .header .button {
-   -webkit-appearance: button;
-   -moz-appearance: button;
-   appearance: button;
+ .header a {
    text-decoration: none;
    color: white;
-   background-color: none;
+   background: transparent;
    border: 1px solid white;
    border-radius: 5px;
    padding: 3%;
  }
 
- .header .button:hover {
+ .header a {
+   border-radius: 5px;
+ }
+
+ .header a:hover {
    background: rgba(255, 255, 255, .4);
-   asdf:s;
  }
 
  /* News */
