@@ -1,6 +1,7 @@
  @import url('https://fonts.googleapis.com/css?family=Work+Sans:regular,black');
  @import url('https://fonts.googleapis.com/css?family=Raleway:regular,black');
  @import url('https://fonts.googleapis.com/css?family=Rubik:regular,black');
+
  :root {
    --roadblue: 0, 53, 148;
    --navyblue: #041E42;
@@ -160,12 +161,12 @@
  }
 
  /* Info */
-
+/* 
  .info {
    display: grid;
    grid-area: info;
    justify-content: center;
-   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
  }
 
  .info-item {
@@ -188,7 +189,7 @@
    letter-spacing: 2px;
    text-decoration: underline;
    margin-bottom: 0;
- }
+ } */
 
  /* Websites */
 
