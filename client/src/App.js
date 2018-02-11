@@ -5,7 +5,7 @@ import Forums from "./components/Forums";
 import Twitter from "./components/Twitter";
 import News from "./components/News";
 import Footer from "./components/Footer";
-import Info from "./components/Info";
+// import Info from "./components/Info";
 import NavBar from "./components/NavBar";
 
 class App extends Component {
@@ -15,7 +15,6 @@ class App extends Component {
         <NavBar />
         <Header />
         <News />
-        <Info />
         <Websites />
         <Forums />
         <Twitter />
