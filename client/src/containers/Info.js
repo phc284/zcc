@@ -12,20 +12,20 @@ class Info extends Component {
   }
 
   componentDidMount() {
-    axios.get('/api/schedule')
-      .then(({data}) => {
-        console.log(data);
-        this.setState({
-          schedule: data
-        })
-      })
-    axios.get('/api/teamstats2')
-      .then(({data}) => {
-        console.log(data);
-        this.setState({
-          tstat: data
-        })
-      })
+    // axios.get('/api/schedule')
+    //   .then(({data}) => {
+    //     console.log(data);
+    //     this.setState({
+    //       schedule: data
+    //     })
+    //   })
+    // axios.get('/api/teamstats2')
+    //   .then(({data}) => {
+    //     console.log(data);
+    //     this.setState({
+    //       tstat: data
+    //     })
+    //   })
   }
 
   renderSchedule() {

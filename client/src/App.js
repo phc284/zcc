@@ -12,15 +12,15 @@ const history = createBrowserHistory();
 
 class App extends Component {
   componentDidMount () {
-    axios.get('/api/info')
-      .then((data) => {
-        console.log('Team Info');
-      });
-
-    axios.get('/api/teamstats')
-      .then((data) => {
-        console.log('Team Info');
-      });
+    // axios.get('/api/info')
+    //   .then((data) => {
+    //     console.log('Team Info');
+    //   });
+    //
+    // axios.get('/api/teamstats')
+    //   .then((data) => {
+    //     console.log('Team Info');
+    //   });
   }
   render() {
     return (

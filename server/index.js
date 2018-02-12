@@ -22,21 +22,21 @@ app.get('/api/twitter', (req, res) => {
   helpers.getTwitterHandles(res);
 });
 
-app.get('/api/info', (req, res) => {
-  helpers.grabTeamInfo(res);
-});
-
-app.get('/api/schedule', (req, res) => {
-  helpers.getSchedule(res);
-});
-
-app.get('/api/teamstats', (req, res) => {
-  helpers.grabTeamStats(res);
-});
-
-app.get('/api/teamstats2', (req, res) => {
-  helpers.getTeamStats(res);
-});
+// app.get('/api/info', (req, res) => {
+//   helpers.grabTeamInfo(res);
+// });
+//
+// app.get('/api/schedule', (req, res) => {
+//   helpers.getSchedule(res);
+// });
+//
+// app.get('/api/teamstats', (req, res) => {
+//   helpers.grabTeamStats(res);
+// });
+//
+// app.get('/api/teamstats2', (req, res) => {
+//   helpers.getTeamStats(res);
+// });
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
