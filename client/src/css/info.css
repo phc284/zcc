@@ -5,3 +5,37 @@
   margin-top: 250px;
   text-align: center;
 }
+
+.stat-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  font-size: 18px;
+  justify-content: center;
+  justify-self: center;
+  width: auto;
+}
+
+.stat-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.team-stat {
+  border: 2px solid white;
+}
+.schedule-container {
+  display: grid;
+  grid-template-columns: 300px;
+  justify-content: center;
+  text-align: center;
+}
+
+.schedule-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-self: center;
+  text-align: center;
+  border: 2px white solid;
+}
