@@ -33,6 +33,7 @@ app.get('/api/schedule', (req, res) => {
 app.get('/api/teamstats', (req, res) => {
   helpers.grabTeamStats(res);
 });
+
 app.get('/api/teamstats2', (req, res) => {
   helpers.getTeamStats(res);
 });
