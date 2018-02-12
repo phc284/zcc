@@ -1,8 +1,8 @@
 const axios = require('axios');
 const data = require('./data');
 
-const schedule = require('./results/team_gamelogs-nfl-2017-2018-regular.json');
-const teamStats = require('./results/overall_team_standings-nfl-2017-2018-regular.json');
+// const schedule = require('./results/team_gamelogs-nfl-2017-2018-regular.json');
+// const teamStats = require('./results/overall_team_standings-nfl-2017-2018-regular.json');
 var MySportsFeeds = require("mysportsfeeds-node");
 var msf = new MySportsFeeds("1.2", true);
 
