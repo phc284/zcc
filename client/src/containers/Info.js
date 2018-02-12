@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from './NavBar'
+import Navbar from '../components/NavBar'
 
 
 class Info extends Component {

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import Homepage from './components/Homepage';
-import Info from './components/Info';
+import Homepage from './containers/Homepage';
+import Info from './containers/Info';
 import Navbar from './components/NavBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
+import './css/homepage.css';
+import './css/info.css';
 
 const history = createBrowserHistory();
 

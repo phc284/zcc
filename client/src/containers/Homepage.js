@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import Header from "./Header";
-import Websites from "./Websites";
-import Forums from "./Forums";
-import Twitter from "./Twitter";
-import News from "./News";
-import Footer from "./Footer";
-// import Info from "./components/Info";
-import NavBar from "./NavBar";
+import Header from "../components/Header";
+import Websites from "../components/Websites";
+import Forums from "../components/Forums";
+import Twitter from "../components/Twitter";
+import News from "../components/News";
+import Footer from "../components/Footer";
 
 class Homepage extends Component {
   render() {
