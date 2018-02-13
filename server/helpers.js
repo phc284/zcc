@@ -33,7 +33,8 @@ const getNews = (res) => {
 
   axios.get(url)
     .then((data) => {
-      res.send(data.data.articles);
+      var length = data.data.articles.length + "";
+      res.send(length);
     })
 }
 
