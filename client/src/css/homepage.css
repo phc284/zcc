@@ -360,7 +360,7 @@ html {
    margin-left: 10px;
    background: linear-gradient(to right, var(--navyblue), transparent);
  }
- .forums-layout h2:before {
+ .twitter-container h2:before {
    margin-left: 10px;
    background: linear-gradient(to left, var(--navyblue), transparent);
  }
