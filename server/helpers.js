@@ -1,8 +1,7 @@
 const axios = require('axios');
 const data = require('./data');
 
-// const schedule = require('./results/team_gamelogs-nfl-2017-2018-regular.json');
-// const teamStats = require('./results/overall_team_standings-nfl-2017-2018-regular.json');
+
 var MySportsFeeds = require("mysportsfeeds-node");
 var msf = new MySportsFeeds("1.2", true);
 
@@ -10,8 +9,6 @@ const SPORTS_USERNAME = process.env.SPORTS_FEED_USERNAME;
 const SPORTS_PASSWORD = process.env.SPORTS_FEED_PASSWORD;
 
 msf.authenticate(SPORTS_USERNAME, SPORTS_PASSWORD);
-
-console.log(typeof SPORTS_USERNAME, SPORTS_USERNAME, typeof SPORTS_PASSWORD, SPORTS_PASSWORD)
 
 const getNews = (res) => {
   var today = new Date();
@@ -45,43 +42,48 @@ const getTwitterHandles = (res) => {
   res.send(data.twitter_handles);
 }
 
-const grabTeamInfo = (res) => {
-  var data = msf.getData('nfl', '2017-2018-regular','team_gamelogs', 'json', {team: 'dal', date:'since-20170820'});
-  res.send('');
-}
 
 const getSchedule = (res) => {
-
-  var data = schedule.teamgamelogs.gamelogs.map((game) => {
-    var obj = {};
-    obj.homeTeam = game.game.homeTeam
-    obj.awayTeam = game.game.awayTeam;
-    obj.homeScore = game.stats.PointsFor;
-    obj.awayScore = game.stats.PointsAgainst;
-    return obj;
-  });
-  res.send(data);
+  var query = `https://api.mysportsfeeds.com/v1.2/pull/nfl/2017-2018-regular/full_game_schedule.json?force=false`
+  axios.get(query, {auth: {username: "phc284", password: "gotrunks8"}})
+    .then((data) => {
+      console.log(data.data)
+      res.send(data.data)
+    })
+    .catch ((error) => {
+      console.log('error', error)
+    })
+  // var schedule = msf.getData('nfl', '2017-2018-regular','team_gamelogs', 'json', {team: 'was'});
+  // console.log('schedule', schedule);
+  // res.send(schedule)
+  // var data = schedule.teamgamelogs.gamelogs.map((game) => {
+  //   var obj = {};
+  //   obj.homeTeam = game.game.homeTeam
+  //   obj.awayTeam = game.game.awayTeam;
+  //   obj.homeScore = game.stats.PointsFor;
+  //   obj.awayScore = game.stats.PointsAgainst;
+  //   return obj;
+  // });
+  // res.send(data);
 }
 
-const grabTeamStats = (res) => {
-  var data = msf.getData('nfl', '2017-2018-regular','overall_team_standings', 'json', {team: 'dal'});
-  res.send(data);
-}
+
 const getTeamStats = (res) => {
-  var obj = {}
-  var data = teamStats.overallteamstandings.teamstandingsentry[0];
-  obj.TotalPassing = data.stats.PassNetYards['#text']
-  obj.TotalRushing = data.stats.RushYards['#text']
-  obj.TotalPointsFor = data.stats.PointsFor['#text']
-  obj.TotalPointsAgainst = data.stats.PointsAgainst['#text']
-  res.send(obj);
+  var teamStats = msf.getData('nfl', '2017-2018-regular','overall_team_standings', 'json', {team: 'phi'});
+  console.log(teamStats)
+  res.send(teamStats)
+  // var obj = {}
+  // var data = teamStats.overallteamstandings.teamstandingsentry[0];
+  // obj.TotalPassing = data.stats.PassNetYards['#text']
+  // obj.TotalRushing = data.stats.RushYards['#text']
+  // obj.TotalPointsFor = data.stats.PointsFor['#text']
+  // obj.TotalPointsAgainst = data.stats.PointsAgainst['#text']
+  // res.send(obj);
 }
 
 module.exports = {
   getNews,
   getTwitterHandles,
-  grabTeamInfo,
   getSchedule,
-  grabTeamStats,
   getTeamStats
 }
