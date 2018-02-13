@@ -33,7 +33,7 @@ const getNews = (res) => {
 
   axios.get(url)
     .then((data) => {
-      res.send(data.data.articles.slice(0, 14));
+      res.send(data.data.articles);
     })
 }
 
