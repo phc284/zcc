@@ -18,7 +18,6 @@ class News extends Component {
     axios.get('/api/news')
       .then ((res) => {
         let articles = res.data;
-        console.log(articles)
         this.setState({
           articles
         })
