@@ -24,7 +24,7 @@ const getNews = (res) => {
   }
 
   var url = 'https://newsapi.org/v2/everything?' +
-            'q=+dallas%20AND%20cowboys%20NOT%20(cheerleader%20ORnsfw)&' +
+            'q=dallas%20AND%20cowboys%20NOT%20(cheerleader%20ORnsfw)&' +
             `from=${yyyy}-${mm}-${dd}&` +
             'sortBy=popularity&' +
             'language=en&' +
