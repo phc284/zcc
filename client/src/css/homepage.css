@@ -417,6 +417,11 @@ html {
      "twitter twitter twitter"
      "footer footer footer";
    }
+
+   .navbar {
+      width: 100%;
+   }
+
    .news-layout {
      display: grid;
      grid-template-columns: auto;
