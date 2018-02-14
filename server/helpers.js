@@ -29,7 +29,6 @@ const getNews = (res) => {
   var url = 'https://newsapi.org/v2/everything?' +
             'q=+dallas%20AND%20cowboys%20NOT%20(cheerleader%20ORnsfw)&' +
             `from=${yyyy}-${mm}-${dd-01}&` +
-            `from=${yyyy}-${mm}-${dd}&` +
             'sortBy=relevancy&' +
             'language=en&' +
             `apiKey=${process.env.NEWS_API_KEY}`;
@@ -37,7 +36,7 @@ const getNews = (res) => {
 
   axios.get(url)
     .then((data) => {
-      res.send(data.data.articles.slice(0, 14));
+      res.send(data.data.articles);
     })
 }
 
