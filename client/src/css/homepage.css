@@ -471,11 +471,7 @@ html {
    .website-item {
      grid-template-columns: 1fr;
      grid-template-rows: 1fr 1fr;
-   }
-
-   .website-item div {
-     margin: 0;
-     padding: 5%;
+     padding: 0px 10px;
    }
 
    .website-item:nth-child(even) a {
@@ -495,5 +491,9 @@ html {
    .website-item:nth-child(odd) div {
      justify-content: center;
      grid-column: 1 / -1;
+   }
+
+   .twitter-container {
+     justify-self: center;
    }
  }
