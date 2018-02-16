@@ -4,12 +4,7 @@ import { Follow } from 'react-twitter-widgets';
 
 class Twitter extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   renderTwitterHandles() {
-
       let randomHandles = this.props.handles.sort(() => Math.random() - 0.5) ;
       return (
         randomHandles.map((handle, index) => {
