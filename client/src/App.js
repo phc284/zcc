@@ -4,7 +4,7 @@ import './css/homepage.css';
 import './css/info.css';
 import Info from './containers/Info';
 import Navbar from './components/NavBar';
-import { BrowserRouter as Router, Route, PropsRoute } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import axios from 'axios';
 

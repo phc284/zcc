@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { TwitterFollowButton } from 'react-twitter-embed';
-import axios from 'axios';
+import { Follow } from 'react-twitter-widgets';
 
 
 class Twitter extends Component {
@@ -19,10 +18,10 @@ class Twitter extends Component {
               <img src={handle.img_url} alt=""/>
               <div>
                 {handle.name}
+                <Follow
+                username={handle.username}
+                />
               </div>
-              <TwitterFollowButton
-                screenName={handle.username}
-              />
             </div>
           )
       })
