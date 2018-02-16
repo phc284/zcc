@@ -1,24 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from "../components/Header";
 import Websites from "../components/Websites";
 import Forums from "../components/Forums";
-import Twitter from "../containers/Twitter";
-import News from "../containers/News";
+import TwitterList from "../containers/TwitterList";
+import NewsList from "../containers/NewsList";
 import Footer from "../components/Footer";
 
-class Homepage extends Component {
-  render() {
+const Homepage = () => {
     return (
       <div className="Homepage">
         <Header />
-        <News />
+        <NewsList />
         <Websites />
         <Forums />
-        <Twitter />
+        <TwitterList />
         <Footer />
       </div>
     );
-  }
 }
 
 

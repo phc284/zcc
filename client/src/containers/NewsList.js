@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchNews } from '../actions'
 
-class News extends Component {
+import Article from '../components/Article'
+
+class NewsList extends Component {
   componentDidMount() {
     this.props.fetchNews();
   }
@@ -12,9 +14,7 @@ class News extends Component {
   renderArticles() {
     return (
       this.props.news.map((article, index) => {
-          return (<div className="news-item" key={index}>
-              <a target="_blank" rel="noopener noreferrer" href={article.url}>{article.title}</a>
-            </div>)
+          return (<Article article={article} key={index}/>)
       })
     )
   }
@@ -24,8 +24,8 @@ class News extends Component {
     return (
         <div className="news">
           <div className="news-layout">
-          <h2>Recent News<br/><span>Powered by NewsAPI</span></h2>
-          {this.renderArticles()}
+            <h2>Recent News<br/><span>Powered by NewsAPI</span></h2>
+            {this.renderArticles()}
           </div>
         </div>
       );
@@ -40,4 +40,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchNews }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(News);
+export default connect(mapStateToProps, mapDispatchToProps)(NewsList);

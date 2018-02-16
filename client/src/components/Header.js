@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Header extends Component {
-  render() {
+const Header = () => {
     return (
       <div className="header">
         <div className="headerText">
@@ -11,7 +10,6 @@ class Header extends Component {
         <a target="_blank" rel="noopener noreferrer" href="http://www.dallascowboys.com/sites/dallascowboys.com/files/bandwagonapp.pdf">Bandwagoners, Fill Out This Application</a>
       </div>
     );
-  }
 }
 
 export default Header;

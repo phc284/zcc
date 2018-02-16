@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import redditPhoto from '../images/cowboys-reddit.png';
 import czonePhoto from '../images/cowboys-zone.png';
 
 
-class Forums extends Component {
-  render() {
+const Forums = () => {
     return (
       <div className="forums">
         <div className="forums-layout">
@@ -30,7 +29,6 @@ class Forums extends Component {
         </div>
       </div>
     );
-  }
 }
 
 export default Forums;
