@@ -8,9 +8,6 @@ import Footer from "../components/Footer";
 
 
 class Homepage extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (
