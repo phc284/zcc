@@ -1,11 +1,19 @@
 import React, { Component } from 'react';
 import { Follow } from 'react-twitter-widgets';
 
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { fetchTwitter } from '../actions'
+
 
 class Twitter extends Component {
 
+  componentDidMount() {
+    this.props.fetchTwitter();
+  }
+
   renderTwitterHandles() {
-      let randomHandles = this.props.handles.sort(() => Math.random() - 0.5) ;
+      let randomHandles = this.props.twitter.sort(() => Math.random() - 0.5) ;
       return (
         randomHandles.map((handle, index) => {
           return (
@@ -36,5 +44,12 @@ class Twitter extends Component {
   }
 }
 
+function mapStateToProps({ twitter }) {
+  return twitter
+}
 
-export default Twitter;
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchTwitter }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Twitter);

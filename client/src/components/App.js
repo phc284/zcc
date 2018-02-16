@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Homepage from '../containers/Homepage';
+import Homepage from './Homepage';
 import '../css/homepage.css';
 import '../css/info.css';
-import Info from '../containers/Info';
-import Navbar from '../components/NavBar';
+import Info from './Info';
+import Navbar from './NavBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 
