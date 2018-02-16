@@ -1,30 +1,17 @@
 import React, { Component } from 'react';
-import { Follow } from 'react-twitter-widgets';
+import { TwitterFollowButton } from 'react-twitter-embed';
 import axios from 'axios';
 
 
 class Twitter extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      handles: []
-    }
-  }
-
-  componentDidMount() {
-    axios.get('/api/twitter')
-    .then((res) => {
-      this.setState({
-        handles: res.data
-      })
-    })
-
+  constructor(props) {
+    super(props);
   }
 
   renderTwitterHandles() {
 
-      let randomHandles = this.state.handles.sort(() => Math.random() - 0.5) ;
+      let randomHandles = this.props.handles.sort(() => Math.random() - 0.5) ;
       return (
         randomHandles.map((handle, index) => {
           return (
@@ -32,8 +19,10 @@ class Twitter extends Component {
               <img src={handle.img_url} alt=""/>
               <div>
                 {handle.name}
-                <Follow username={handle.username}/>
               </div>
+              <TwitterFollowButton
+                screenName={handle.username}
+              />
             </div>
           )
       })

@@ -6,16 +6,20 @@ import Twitter from "../components/Twitter";
 import News from "../components/News";
 import Footer from "../components/Footer";
 
+
 class Homepage extends Component {
+  constructor(props) {
+    super(props);
+  }
 
   render() {
     return (
       <div className="Homepage">
         <Header />
-        <News />
+        <News articles={this.props.articles}/>
         <Websites />
         <Forums />
-        <Twitter />
+        <Twitter handles={this.props.handles}/>
         <Footer />
       </div>
     );
