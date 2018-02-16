@@ -422,6 +422,10 @@ html {
       width: 100%;
    }
 
+   .news {
+     height: 250px;
+   }
+
    .news-layout {
      display: grid;
      grid-template-columns: auto;
