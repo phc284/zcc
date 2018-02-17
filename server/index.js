@@ -11,23 +11,36 @@ const helpers = require('./helpers');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//On the server this will serve up our build folder as static files
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 app.get('/api/news', (req, res) => {
-  helpers.getNews(res);
+  helpers.getNews(res)
+    .then((data) => {
+      res.send(data.data.articles);
+    })
 });
 
 app.get('/api/twitter', (req, res) => {
-  helpers.getTwitterHandles(res);
+  var handles = helpers.getTwitterHandles();
+  res.send(handles)
 });
 
 
-// app.get('/api/schedule', (req, res) => {
-//   helpers.getSchedule(res);
-// });
-//
-//
+app.get('/api/schedule', (req, res) => {
+  helpers.getSchedule()
+    .then((result) => {
+      var schedule = result.teamgamelogs.gamelogs.reduce((obj, game) => {
+        obj.homeTeam = game.game.homeTeam
+        obj.awayTeam = game.game.awayTeam;
+        obj.homeScore = game.stats.PointsFor;
+        obj.awayScore = game.stats.PointsAgainst;
+        return obj;
+      }, {});
+      res.send(schedule)
+    })
+});
+
+
 // app.get('/api/teamstats2', (req, res) => {
 //   helpers.getTeamStats(res);
 // });

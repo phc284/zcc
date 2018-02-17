@@ -10,7 +10,7 @@ const SPORTS_PASSWORD = process.env.SPORTS_FEED_PASSWORD;
 
 msf.authenticate(SPORTS_USERNAME, SPORTS_PASSWORD);
 
-const getNews = (res) => {
+const getNews = () => {
   var today = new Date();
   var dd = "0" + today.getDate();
   var mm = today.getMonth()+1 + "";
@@ -30,42 +30,20 @@ const getNews = (res) => {
             'language=en&' +
             `apiKey=${process.env.NEWS_API_KEY}`;
 
-  axios.get(url)
-    .then((data) => {
-      res.send(data.data.articles);
-    })
+  return axios.get(url);
 }
 
 const getTwitterHandles = (res) => {
-  res.send(data.twitter_handles);
+  return data.twitter_handles;
 }
 
-//
-// const getSchedule = (res) => {
-//   var query = `https://api.mysportsfeeds.com/v1.2/pull/nfl/2017-2018-regular/full_game_schedule.json?force=false`
-//   axios.get(query, {auth: {username: "phc284", password: "gotrunks8"}})
-//     .then((data) => {
-//       console.log(data.data)
-//       res.send(data.data)
-//     })
-//     .catch ((error) => {
-//       console.log('error', error)
-//     })
-//   // var schedule = msf.getData('nfl', '2017-2018-regular','team_gamelogs', 'json', {team: 'was'});
-//   // console.log('schedule', schedule);
-//   // res.send(schedule)
-//   // var data = schedule.teamgamelogs.gamelogs.map((game) => {
-//   //   var obj = {};
-//   //   obj.homeTeam = game.game.homeTeam
-//   //   obj.awayTeam = game.game.awayTeam;
-//   //   obj.homeScore = game.stats.PointsFor;
-//   //   obj.awayScore = game.stats.PointsAgainst;
-//   //   return obj;
-//   // });
-//   // res.send(data);
-// }
-//
-//
+
+const getSchedule = () => {
+  var query = `https://api.mysportsfeeds.com/v1.2/pull/nfl/2017-2018-regular/full_game_schedule.json?force=false`
+  return msf.getData('nfl', '2017-2018-regular','team_gamelogs', 'json', {team: 'dal'});
+}
+
+
 // const getTeamStats = (res) => {
 //   var teamStats = msf.getData('nfl', '2017-2018-regular','overall_team_standings', 'json', {team: 'phi'});
 //   console.log(teamStats)
@@ -82,6 +60,6 @@ const getTwitterHandles = (res) => {
 module.exports = {
   getNews,
   getTwitterHandles,
-  // getSchedule,
+  getSchedule,
   // getTeamStats
 }
