@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import Schedule from '../containers/ScheduleList';
+import Footer from "../components/Footer";
 
 class Info extends Component {
-  componentDidMount() {
-    axios.get('/api/schedule')
-      .then((data) => {
-        console.log('info', data)
-      })
-  }
   render() {
     return (
       <div className="info">
-        COMING SOON
+        <Schedule />
+        <Footer />
       </div>
     );
   }

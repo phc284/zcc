@@ -29,13 +29,15 @@ app.get('/api/twitter', (req, res) => {
 app.get('/api/schedule', (req, res) => {
   helpers.getSchedule()
     .then((result) => {
-      var schedule = result.teamgamelogs.gamelogs.reduce((obj, game) => {
+      var schedule = result.teamgamelogs.gamelogs.map((game) => {
+        var obj = {}
         obj.homeTeam = game.game.homeTeam
         obj.awayTeam = game.game.awayTeam;
         obj.homeScore = game.stats.PointsFor;
         obj.awayScore = game.stats.PointsAgainst;
         return obj;
-      }, {});
+      });
+      console.log('***********', schedule)
       res.send(schedule)
     })
 });

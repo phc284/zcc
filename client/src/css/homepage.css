@@ -384,12 +384,14 @@ html {
 
  .footer {
    grid-area: footer;
-   /* grid-column: 1 / -1; */
    background-color: var(--pantgrey);
    height: 50px;
    display: flex;
    align-items: center;
    justify-content: center;
+   grid-column: 1 / -1;
+   font-size: 12px;
+   color: black;
  }
 
  /* Media Queries */
