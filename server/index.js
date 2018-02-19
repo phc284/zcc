@@ -35,17 +35,24 @@ app.get('/api/schedule', (req, res) => {
         obj.awayTeam = game.game.awayTeam;
         obj.homeScore = game.stats.PointsFor;
         obj.awayScore = game.stats.PointsAgainst;
+        obj.date = game.game.date.slice(5);
         return obj;
       });
-      console.log('***********', schedule)
       res.send(schedule)
     })
 });
 
 
-// app.get('/api/teamstats2', (req, res) => {
-//   helpers.getTeamStats(res);
-// });
+app.get('/api/teamstats', (req, res) => {
+  helpers.getTeamStats()
+    .then((data) => {
+      console.log(data)
+      var obj = {}
+      var data = teamStats.overallteamstandings.teamstandingsentry[0];
+      
+      res.send(obj);
+    })
+});
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.

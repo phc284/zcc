@@ -22,7 +22,6 @@ class ScheduleList extends Component {
   render(){
     return (
       <div className="schedule">
-        <h2>'17-'18 Schedule</h2>
         {this.renderSchedule()}
       </div>
     )

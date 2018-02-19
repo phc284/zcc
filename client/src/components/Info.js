@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import Schedule from '../containers/ScheduleList';
+import Stats from '../containers/Stats';
 import Footer from "../components/Footer";
 
 class Info extends Component {
@@ -9,6 +9,7 @@ class Info extends Component {
     return (
       <div className="info">
         <Schedule />
+        <Stats />
         <Footer />
       </div>
     );

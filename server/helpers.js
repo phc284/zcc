@@ -44,22 +44,32 @@ const getSchedule = () => {
 }
 
 
-// const getTeamStats = (res) => {
-//   var teamStats = msf.getData('nfl', '2017-2018-regular','overall_team_standings', 'json', {team: 'phi'});
-//   console.log(teamStats)
-//   res.send(teamStats)
-//   // var obj = {}
-//   // var data = teamStats.overallteamstandings.teamstandingsentry[0];
-//   // obj.TotalPassing = data.stats.PassNetYards['#text']
-//   // obj.TotalRushing = data.stats.RushYards['#text']
-//   // obj.TotalPointsFor = data.stats.PointsFor['#text']
-//   // obj.TotalPointsAgainst = data.stats.PointsAgainst['#text']
-//   // res.send(obj);
-// }
+const getTeamStats = () => {
+  return msf.getData('nfl', '2017-2018-regular','overall_team_standings', 'json', {team: 'dal'});
+}
+
+const makeTeamStats = (obj) => {
+  obj.Passing = data.stats.PassNetYards['#text'];
+  obj.Rushing = data.stats.RushYards['#text'];
+  obj.PointsFor = data.stats.PointsFor['#text'];
+  obj.PointsAgainst = data.stats.PointsAgainst['#text'];
+}
+
+const makeOffenseStats = (obj) => {
+  obj.Interceptions = data.stats.PointsAgainst['#text'];
+  obj.PassAvg = data.stats.PointsAgainst['#text'];
+}
+
+const makeDefStats = (obj) => {
+
+}
 
 module.exports = {
   getNews,
   getTwitterHandles,
   getSchedule,
-  // getTeamStats
+  getTeamStats,
+  makeOffenseStats,
+  makeDefStats,
+  makeTeamStats
 }
