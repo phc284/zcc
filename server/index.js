@@ -30,15 +30,11 @@ app.get('/api/schedule', (req, res) => {
   helpers.getSchedule()
     .then((result) => {
       var schedule = result.teamgamelogs.gamelogs.map((game) => {
-        var obj = {}
-        obj.homeTeam = game.game.homeTeam
-        obj.awayTeam = game.game.awayTeam;
-        obj.homeScore = game.stats.PointsFor;
-        obj.awayScore = game.stats.PointsAgainst;
-        obj.date = game.game.date.slice(5);
-        return obj;
+        return helpers.formatSchedule(game)
       });
       res.send(schedule)
+    }).catch((err) => {
+      console.log(err)
     })
 });
 
@@ -46,10 +42,9 @@ app.get('/api/schedule', (req, res) => {
 app.get('/api/teamstats', (req, res) => {
   helpers.getTeamStats()
     .then((data) => {
-      console.log(data)
       var obj = {}
       var data = teamStats.overallteamstandings.teamstandingsentry[0];
-      
+
       res.send(obj);
     })
 });

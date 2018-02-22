@@ -3,7 +3,6 @@ import React, { Component }from 'react';
 import List from 'material-ui/List';
 
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import axios from 'axios';
 

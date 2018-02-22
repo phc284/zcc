@@ -1,17 +1,12 @@
 import React from 'react';
 
 const ScheduleItem = ({ game }) => {
-  let awayTeam = game.awayTeam['Abbreviation'];
-  let awayScore = game.awayScore['#text'];
-  let homeTeam = game.homeTeam['Abbreviation'];
-  let homeScore = game.homeScore['#text'];
+  let awayTeam = game.awayTeam;
+  let awayScore = game.awayScore;
+  let homeTeam = game.homeTeam;
+  let homeScore = game.homeScore;
   let date = game.date;
 
-  if (awayTeam === 'DAL') {
-    let temp = awayScore;
-    awayScore = homeScore;
-    homeScore = temp;
-  }
 
   return (
     <div className="schedule-item">

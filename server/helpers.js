@@ -43,6 +43,29 @@ const getSchedule = () => {
   return msf.getData('nfl', '2017-2018-regular','team_gamelogs', 'json', {team: 'dal'});
 }
 
+const formatSchedule = (game) => {
+  console.log(game.stats)
+  var awayTeam = game.game.awayTeam['Abbreviation'];
+  var awayScore = game.stats.PointsAgainst['#text'];
+  var homeTeam = game.game.homeTeam['Abbreviation'];
+  var homeScore = game.stats.PointsFor['#text'];
+  var date = game.game.date;
+
+  if (awayTeam === 'DAL') {
+    var temp = awayScore;
+    awayScore = homeScore;
+    homeScore = temp;
+  }
+
+  var obj = {}
+  obj.homeTeam = homeTeam
+  obj.awayTeam = awayTeam;
+  obj.homeScore = homeScore;
+  obj.awayScore = awayScore;
+  obj.date = date.slice(5);
+  return obj;
+}
+
 
 const getTeamStats = () => {
   return msf.getData('nfl', '2017-2018-regular','overall_team_standings', 'json', {team: 'dal'});
@@ -68,6 +91,7 @@ module.exports = {
   getNews,
   getTwitterHandles,
   getSchedule,
+  formatSchedule,
   getTeamStats,
   makeOffenseStats,
   makeDefStats,
