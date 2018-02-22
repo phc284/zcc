@@ -29,7 +29,6 @@ class ScheduleList extends Component {
 }
 
 function mapStateToProps({ schedule }) {
-  console.log(schedule)
   return schedule
 }
 
