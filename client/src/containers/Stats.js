@@ -16,7 +16,6 @@ class Stats extends Component {
   }
 
   render(){
-    console.log(this.props.stats)
     if (this.props.stats.teamStats) {
       return (
         <div className="stats">
