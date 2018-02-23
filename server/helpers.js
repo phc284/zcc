@@ -40,7 +40,7 @@ const getTwitterHandles = (res) => {
 
 const getSchedule = () => {
   var query = `https://api.mysportsfeeds.com/v1.2/pull/nfl/2017-2018-regular/full_game_schedule.json?force=false`
-  return msf.getData('nfl', '2017-2018-regular','team_gamelogs', 'json', {team: 'dal', force: true});
+  return msf.getData('nfl', '2017-2018-regular','team_gamelogs', 'json', {team: 'dal'});
 }
 
 const formatSchedule = (game) => {
@@ -67,7 +67,7 @@ const formatSchedule = (game) => {
 
 
 const getTeamStats = () => {
-  return msf.getData('nfl', '2017-2018-regular','overall_team_standings', 'json', {team: 'dal', force: true});
+  return msf.getData('nfl', '2017-2018-regular','overall_team_standings', 'json', {team: 'dal'});
 }
 
 const makeTeamStats = (data) => {
