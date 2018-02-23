@@ -44,7 +44,6 @@ const getSchedule = () => {
 }
 
 const formatSchedule = (game) => {
-  console.log(game.stats)
   var awayTeam = game.game.awayTeam['Abbreviation'];
   var awayScore = game.stats.PointsAgainst['#text'];
   var homeTeam = game.game.homeTeam['Abbreviation'];
@@ -71,20 +70,47 @@ const getTeamStats = () => {
   return msf.getData('nfl', '2017-2018-regular','overall_team_standings', 'json', {team: 'dal'});
 }
 
-const makeTeamStats = (obj) => {
+const makeTeamStats = (data) => {
+  var obj = {}
   obj.Passing = data.stats.PassNetYards['#text'];
   obj.Rushing = data.stats.RushYards['#text'];
   obj.PointsFor = data.stats.PointsFor['#text'];
   obj.PointsAgainst = data.stats.PointsAgainst['#text'];
+  return obj
 }
 
-const makeOffenseStats = (obj) => {
-  obj.Interceptions = data.stats.PointsAgainst['#text'];
-  obj.PassAvg = data.stats.PointsAgainst['#text'];
+const makeOffenseStats = (data) => {
+  var obj = {}
+  obj.PassInt = data.stats.PassInt['#text'];
+  obj.PassAvg = data.stats.PassAvg['#text'];
+  obj.Fumbles = data.stats.Fumbles['#text'];
+  obj.PassPct = data.stats.PassPct['#text'];
+  obj.RushTD = data.stats.RushTD['#text'];
+  obj.PassTD = data.stats.PassTD['#text'];
+  obj.ThirdDownsPct = data.stats.ThirdDownsPct['#text'];
+  return obj;
 }
 
-const makeDefStats = (obj) => {
+const makeDefStats = (data) => {
+  var obj = {};
+  obj.Sacks = data.stats.Sacks['#text'];
+  obj.TacklesForLoss = data.stats.TacklesForLoss['#text'];
+  obj.Interceptions = data.stats.Interceptions['#text'];
+  obj.PassesDefended = data.stats.PassesDefended['#text'];
+  obj.FumForced = data.stats.FumForced['#text'];
+  return obj;
+}
 
+const makeSTStats = (data) => {
+  var obj = {};
+  obj.KrAvg = data.stats.KrAvg['#text'];
+  obj.PrAvg = data.stats.PrAvg['#text'];
+  obj.FgPct = data.stats.FgPct['#text'];
+  obj.XpPct = data.stats.XpPct['#text'];
+  obj.KoRetAvgYds = data.stats.KoRetAvgYds['#text'];
+  obj.PuntAvg = data.stats.PuntAvg['#text'];
+
+  return obj;
 }
 
 module.exports = {
@@ -95,5 +121,6 @@ module.exports = {
   getTeamStats,
   makeOffenseStats,
   makeDefStats,
-  makeTeamStats
+  makeTeamStats,
+  makeSTStats
 }

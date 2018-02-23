@@ -42,10 +42,16 @@ app.get('/api/schedule', (req, res) => {
 app.get('/api/teamstats', (req, res) => {
   helpers.getTeamStats()
     .then((data) => {
+      console.log(data)
       var obj = {}
-      var data = teamStats.overallteamstandings.teamstandingsentry[0];
-
+      var stats = data.overallteamstandings.teamstandingsentry[0];
+      obj.teamStats = helpers.makeTeamStats(stats);
+      obj.offStats = helpers.makeOffenseStats(stats);
+      obj.defStats = helpers.makeDefStats(stats);
+      obj.stStats = helpers.makeSTStats(stats);
       res.send(obj);
+    }).catch((err) => {
+      console.log(err)
     })
 });
 

@@ -12,11 +12,13 @@ class ScheduleList extends Component {
 
   renderSchedule() {
     let schedule = this.props.schedule;
-    return schedule.map((game, index) => {
-      return (
-        <ScheduleItem game={game} key={index}/>
-      )
-    })
+    if(schedule){
+      return schedule.map((game, index) => {
+        return (
+          <ScheduleItem game={game} key={index}/>
+        )
+      })  
+    }
   }
 
   render(){
