@@ -1,21 +1,19 @@
 {
-  "name": "cowboys",
+  "name": "react-redux-template",
   "version": "1.0.0",
-  "description": "Website with dallas cowboys resources",
+  "description": "",
   "main": "index.js",
-  "homepage": "http://phc284.github.io/cowboys",
   "scripts": {
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "dev":
+      "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "client": "cd client && npm start",
     "start": "cd server && nodemon index.js",
     "server": "cd server && nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "heroku-postbuild":
+      "cd client && npm install --only=dev && npm install && npm run build"
   },
-  "cacheDirectories": [
-    "node_modules",
-    "client/node_modules"
-  ],
+  "cacheDirectories": ["node_modules", "client/node_modules"],
   "author": "Peter Choi",
   "license": "ISC",
   "dependencies": {
@@ -23,8 +21,6 @@
     "body-parser": "^1.18.2",
     "dotenv": "^5.0.0",
     "express": "^4.16.2",
-    "gh-pages": "^1.1.0",
-    "mysportsfeeds-node": "^1.0.0",
     "nodemon": "^1.14.12"
   },
   "devDependencies": {
