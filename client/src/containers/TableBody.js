@@ -1,21 +1,27 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export class TableBody extends Component {
-  static propTypes = {};
+import TableRow from '../components/TableRow';
 
+export class TableBody extends Component {
   render() {
+    const { tracks } = this.props;
     return (
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
+        {tracks.length
+          ? tracks.map((track, index) => {
+              return (
+                <TableRow key={track.id} number={index + 1} track={track} />
+              );
+            })
+          : null}
       </tbody>
     );
   }
 }
+
+TableBody.propTypes = {
+  tracks: PropTypes.array
+};
 
 export default TableBody;

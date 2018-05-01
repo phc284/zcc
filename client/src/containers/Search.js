@@ -19,6 +19,10 @@ class Search extends Component {
   }
 }
 
-Search.propTypes = {};
+Search.propTypes = {
+  search: PropTypes.func,
+  handleChange: PropTypes.func,
+  query: PropTypes.string
+};
 
 export default Search;

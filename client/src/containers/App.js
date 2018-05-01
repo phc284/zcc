@@ -14,7 +14,8 @@ class App extends Component {
 
   handleSearch = event => {
     event.preventDefault();
-    console.log(this.state.query);
+
+    //search for tracks with query
     axios.get(`/api/search/${this.state.query}`).then(data => {
       console.log('handleSearch data', data.data);
       const tracks = data.data;
@@ -38,13 +39,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>Search Tracks on Spotify</h1>
         <Search
           search={this.handleSearch}
           handleChange={this.handleChange}
           query={this.state.query}
         />
         {/*Filter?*/}
-        <TableView />
+        <TableView tracks={this.state.tracks} />
       </div>
     );
   }

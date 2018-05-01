@@ -6,16 +6,18 @@ import PropTypes from 'prop-types';
 import './TableView.css';
 
 export class TableView extends Component {
-  static propTypes = {};
-
   render() {
     return (
       <table className="table">
         <TableThread />
-        <TableBody />
+        <TableBody tracks={this.props.tracks} />
       </table>
     );
   }
 }
+
+TableView.propTypes = {
+  tracks: PropTypes.array
+};
 
 export default TableView;
