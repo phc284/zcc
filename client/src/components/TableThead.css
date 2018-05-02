@@ -5,3 +5,7 @@ a:hover {
 th:hover {
   color: rgb(32, 107, 248);
 }
+
+img {
+  width: 11px;
+}

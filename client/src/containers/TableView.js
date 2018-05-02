@@ -9,7 +9,8 @@ export class TableView extends Component {
   state = {
     sorted: false,
     ascending: false,
-    sortedTracks: []
+    sortedTracks: [],
+    clicked: ''
   };
 
   handleSort = event => {
@@ -72,8 +73,10 @@ export class TableView extends Component {
       });
     }
 
+    //set state to see which header was clicked
     this.setState({
       sorted: true,
+      clicked: event.target.text,
       sortedTracks
     });
   };
@@ -81,8 +84,13 @@ export class TableView extends Component {
   render() {
     return (
       <div>
-        <table className="table table-responsive-md table-hover">
-          <TableThead sort={this.handleSort} />
+        <table className="table table-responsive-md table-hover table-light">
+          <TableThead
+            sort={this.handleSort}
+            sorted={this.state.sorted}
+            ascending={this.state.ascending}
+            clicked={this.state.clicked}
+          />
           <TableBody
             tracks={
               this.state.sortedTracks.length

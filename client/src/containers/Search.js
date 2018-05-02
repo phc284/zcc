@@ -11,7 +11,7 @@ class Search extends Component {
           <input
             type="text"
             onChange={this.props.handleChange}
-            placeholder="Enter a song name"
+            placeholder="Enter a Song Name"
             required
           />
           <button type="submit">Submit</button>

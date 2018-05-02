@@ -29,7 +29,7 @@ router.get('/search/:query', (req, res) => {
   // res.send(trackData.tracks.items);
 
   const query = `track:${req.params.query}`;
-  spotifyApi.searchTracks(query).then(
+  spotifyApi.searchTracks(query, { limit: 35 }).then(
     function(data) {
       // console.log('Search tracks by "Love" in the song name', data.body);
       res.send(data.body.tracks.items);
