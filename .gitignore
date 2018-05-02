@@ -61,3 +61,6 @@ typings/
 /server/env.env
 
 server/results
+server/.DS_STORE
+
+.DS_Store
