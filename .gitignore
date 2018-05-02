@@ -58,6 +58,6 @@ typings/
 
 # dotenv environment variables file
 .env
-env.env
+/server/env.env
 
 server/results
