@@ -11,7 +11,7 @@ export class TableBody extends Component {
         {tracks.length
           ? tracks.map((track, index) => {
               return (
-                <TableRow key={track.id} number={index + 1} track={track} />
+                <TableRow key={track.id} number={track.number} track={track} />
               );
             })
           : null}

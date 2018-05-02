@@ -6,15 +6,18 @@ import './Search.css';
 class Search extends Component {
   render() {
     return (
-      <form onSubmit={this.props.search}>
-        <input
-          type="text"
-          onChange={this.props.handleChange}
-          placeholder="Enter a song name"
-          required
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <div>
+        <form onSubmit={this.props.search}>
+          <input
+            type="text"
+            onChange={this.props.handleChange}
+            placeholder="Enter a song name"
+            required
+          />
+          <button type="submit">Submit</button>
+        </form>
+        {this.props.noResults ? <span>No results were found</span> : ''}
+      </div>
     );
   }
 }

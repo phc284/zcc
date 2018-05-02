@@ -9,7 +9,8 @@ import './App.css';
 class App extends Component {
   state = {
     query: '',
-    tracks: []
+    tracks: [],
+    noResults: false
   };
 
   handleSearch = event => {
@@ -20,11 +21,33 @@ class App extends Component {
       console.log('handleSearch data', data.data);
       const tracks = data.data;
 
+      tracks.forEach((track, index) => {
+        track.number = index + 1;
+      });
+
       //set state of tracks to data from request
       this.setState({
         tracks
       });
+
+      this.handleNoResults();
     });
+  };
+
+  handleNoResults = () => {
+    if (this.state.tracks.length === 0) {
+      this.setState({
+        noResults: true
+      });
+    }
+
+    setTimeout(
+      () =>
+        this.setState({
+          noResults: false
+        }),
+      3500
+    );
   };
 
   handleChange = event => {
@@ -44,6 +67,7 @@ class App extends Component {
           search={this.handleSearch}
           handleChange={this.handleChange}
           query={this.state.query}
+          noResults={this.state.noResults}
         />
         {/*Filter?*/}
         <TableView tracks={this.state.tracks} />

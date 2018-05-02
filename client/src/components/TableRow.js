@@ -11,12 +11,17 @@ const TableRow = props => {
     })
     .join(', ');
 
+  console.log('popularity', popularity.toString());
+
   return (
     <tr>
       <th scope="row">{props.number}</th>
       <td>{name}</td>
-      <td>{formatArtist}</td>
       <td>{album.name}</td>
+      <td>{formatArtist}</td>
+      <td>
+        <progress value={popularity.toString()} max="100" />
+      </td>
     </tr>
   );
 };
