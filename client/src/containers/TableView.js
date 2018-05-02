@@ -81,7 +81,7 @@ export class TableView extends Component {
   render() {
     return (
       <div>
-        <table className="table table-responsive table-hover">
+        <table className="table table-responsive-md table-hover">
           <TableThead sort={this.handleSort} />
           <TableBody
             tracks={
