@@ -18,7 +18,6 @@ class App extends Component {
 
     //search for tracks with query
     axios.get(`/api/search/${this.state.query}`).then(data => {
-      console.log('handleSearch data', data.data);
       const tracks = data.data;
 
       tracks.forEach((track, index) => {

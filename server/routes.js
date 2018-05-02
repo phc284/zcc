@@ -28,7 +28,7 @@ router.get('/search/:query', (req, res) => {
   //use fake data to not use up requests
   // res.send(trackData.tracks.items);
 
-  const { query } = req.params;
+  const query = `track:${req.params.query}`;
   spotifyApi.searchTracks(query).then(
     function(data) {
       // console.log('Search tracks by "Love" in the song name', data.body);

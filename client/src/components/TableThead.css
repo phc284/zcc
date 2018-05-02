@@ -1,3 +1,7 @@
 a:hover {
   cursor: pointer;
 }
+
+th:hover {
+  color: rgb(32, 107, 248);
+}

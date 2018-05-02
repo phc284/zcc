@@ -11,8 +11,6 @@ const TableRow = props => {
     })
     .join(', ');
 
-  console.log('popularity', popularity.toString());
-
   return (
     <tr>
       <th scope="row">{props.number}</th>
