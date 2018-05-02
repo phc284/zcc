@@ -6,7 +6,6 @@ require('dotenv').config({
 const path = require('path');
 const bodyParser = require('body-parser');
 const axios = require('axios');
-const SpotifyWebApi = require('spotify-web-api-node');
 
 const routes = require('./routes.js');
 

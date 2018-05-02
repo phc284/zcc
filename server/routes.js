@@ -3,8 +3,6 @@ const SpotifyWebApi = require('spotify-web-api-node');
 
 const router = express.Router();
 
-const trackData = require('./fakeData.json');
-
 var spotifyApi = new SpotifyWebApi({
   clientId: process.env.SPOTIFY_ID,
   clientSecret: process.env.SPOTIFY_SECRET
@@ -25,13 +23,9 @@ spotifyApi.clientCredentialsGrant().then(
 );
 
 router.get('/search/:query', (req, res) => {
-  //use fake data to not use up requests
-  // res.send(trackData.tracks.items);
-
   const query = `track:${req.params.query}`;
   spotifyApi.searchTracks(query, { limit: 35 }).then(
     function(data) {
-      // console.log('Search tracks by "Love" in the song name', data.body);
       res.send(data.body.tracks.items);
     },
     function(err) {
