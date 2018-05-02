@@ -2,21 +2,40 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TableRow = props => {
-  const { number, album, artists, id, name, popularity } = props.track;
+  const {
+    number,
+    album,
+    artists,
+    name,
+    popularity,
+    external_urls
+  } = props.track;
 
-  // format artists into a string from incoming array
-  const formatArtist = artists
-    .map(artist => {
-      return artist.name;
-    })
-    .join(', ');
+  const formatArtists = artists.map((artist, index) => {
+    return (
+      <span key={index}>
+        <a href={artist.external_urls.spotify} target="_blank">
+          {artist.name}
+        </a>
+        {index === artists.length - 1 ? '' : ', '}
+      </span>
+    );
+  });
 
   return (
     <tr>
-      <th scope="row">{props.number}</th>
-      <td>{name}</td>
-      <td>{album.name}</td>
-      <td>{formatArtist}</td>
+      <th scope="row">{number}</th>
+      <td>
+        <a href={external_urls.spotify} target="_blank">
+          {name}
+        </a>
+      </td>
+      <td>
+        <a href={album.external_urls.spotify} target="_blank">
+          {album.name}
+        </a>
+      </td>
+      <td>{formatArtists}</td>
       <td>
         <progress value={popularity.toString()} max="100" />
       </td>

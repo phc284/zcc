@@ -6,7 +6,7 @@ import './Search.css';
 class Search extends Component {
   render() {
     return (
-      <div>
+      <div className="search">
         <form onSubmit={this.props.search}>
           <input
             type="text"

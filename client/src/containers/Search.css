@@ -3,7 +3,7 @@ div {
   margin: 25px 0;
 }
 
-span {
+.search span {
   text-align: center;
   color: red;
   font-weight: bold;

@@ -6,12 +6,10 @@ import PropTypes from 'prop-types';
 import './TableView.css';
 
 export class TableView extends Component {
-  state = {};
-
   render() {
     return (
       <div>
-        <table className="table table-responsive-md table-hover table-light">
+        <table className="table table-responsive-md table-hover">
           <TableThead
             sort={this.props.handleSort}
             sorted={this.props.sorted}
